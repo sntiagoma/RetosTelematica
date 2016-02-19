@@ -1,0 +1,27 @@
+{
+  "name": "triqui-distribuido",
+  "version": "0.0.1",
+  "description": "Primer reto para la materia de T.E. en Telematica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sntiagoma/RetosTelematica.git"
+  },
+  "keywords": [
+    "triqui",
+    "telematica",
+    "distribuido"
+  ],
+  "author": "Juan Daniel Arboleda Sanchez, Santiago Montoya Angarita",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sntiagoma/RetosTelematica/issues"
+  },
+  "homepage": "https://github.com/sntiagoma/RetosTelematica#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
