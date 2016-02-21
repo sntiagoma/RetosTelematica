@@ -1,0 +1,28 @@
+<h5>
+    Your Id: {{id}}<br/>
+    Your Opponent Id: {{opponent}}<br/>
+    Is your turn?: {{isYourTurn}} </br>
+    You're the {{sign}}
+</h5>
+
+<form ng-submit="connectWith()" ng-show="showForm">
+    <div class="row">
+        <div class="col s8">
+            <input type="text" placeholder="/#" ng-model="msg.destpeer">
+        </div>
+        <div class="col s4">
+            <input type="submit" value="Conectarse" class="btn">
+        </div>
+    </div>
+</form>
+
+<div class="container" ng-show="showBoard">
+    <div ng-repeat="(key,row) in triki.board">
+        <a class="btn-flat"
+            ng-repeat="value in [0,1,2]"
+            style="border: 1px black solid;width:50px;height:50px;font-size: 40px"
+            ng-click="clickBoard(key,value)">
+            {{row[value]}}
+        </a>
+    </div>
+</div>
