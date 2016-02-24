@@ -17,12 +17,22 @@
 </form>
 
 <div class="container" ng-show="showBoard">
-    <div ng-repeat="(key,row) in triki.board">
-        <a class="btn-flat"
-            ng-repeat="value in [0,1,2]"
-            style="border: 1px black solid;width:50px;height:50px;font-size: 40px"
-            ng-click="clickBoard(key,value)">
-            {{row[value]}}
-        </a>
+    <div class="row">
+        <div ng-repeat="(key,row) in triki.board" class="col s7">
+            <a class="btn-flat"
+                ng-repeat="value in [0,1,2]"
+                style="border: 1px black solid;width:50px;height:50px;font-size: 40px"
+                ng-click="clickBoard(key,value)">
+                {{row[value]}}
+            </a>
+        </div>
+        <div class="col s5" ng-controller="UsersController">
+            <ul>
+                <li ng-repeat="value in userkeys">
+                    {{value}}
+                </li>
+                <a class="btn" ng-click="reloadUsers()">Reload</a>
+            </ul>
+        </div>
     </div>
 </div>

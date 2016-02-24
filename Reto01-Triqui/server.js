@@ -80,7 +80,7 @@ app.use(function(req,res,next){
     res.status(err.status).render('error',{error:err});
 });
 indexRoute.get('/clients', function (req, res) {
-  res.send(Object.keys(clients).toString());
+  res.send({users:Object.keys(clients)});
 });
 
 //Create HTTP Sever

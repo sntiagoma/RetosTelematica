@@ -1,8 +1,21 @@
 var Triki = require("../models/triqui.js");
 var TrikiSigns = require("../models/triqui-signs.js");
 function controllers(app){
-    app.controller('TrikiController', ['$scope', function($scope){
+    app
+    .controller('TrikiController', ['$scope', function($scope){
         $scope.title = require("./app.js").name;
+    }])
+    .controller("UsersController",['$scope','$http',
+    function($scope,$http){
+        $scope.userkeys = ["Yo","Soy","Batman"];
+        $scope.reloadUsers = function(){
+            $http.get("/clients").success(function(data){
+                $scope.userkeys = data.users;
+            }).error(function(err){
+                $scope.userkeys = ["a"];
+            });
+        };
+        $scope.reloadUsers();  
     }])
     .controller('GameController',
         ['$scope','$http','$routeParams','socket',
@@ -15,7 +28,6 @@ function controllers(app){
         $scope.sign = undefined;
         $scope.triki = new Triki();
         $scope.msg = {};
-
         socket.on('connected', function(socketid) {
             console.log("Id: %s",socketid);
             $scope.id = socketid;
